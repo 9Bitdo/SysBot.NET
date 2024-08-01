@@ -16,51 +16,35 @@ public partial class DiscordSettings
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class EmbedSettingConfig
     {
-        // Build MoveEmoji
-        [Description("Use EmojiCode")]
-        public bool UseMoveEmoji { get; set; } = false;
+        // Implement optional mode to Emoji thus skipping the need to manually input EmojiCode
+        // Enum is a data type, 0 = Sysbot mode and 1 = PKHeX mode
+        // Set the data type of SpeciePicMode to the SpeciePicModeEnum object created to achieve the effect of the optional box
+        // The content of the optional box depends on the content of Enum which can be rewrote
+        [Description("Choose SysBot or PKHeX for different sprites display in the embed"),DisplayName("SpritePicMode")]
+        public SpeciePicModeEnum SpeciePicMode { get; set; } = SpeciePicModeEnum.Sysbot;      
+        public enum SpeciePicModeEnum{Sysbot, PKHeX}      
+
+        [Description("Select Text, Emoji or upload custom emojis to Discord with filename, Male = gender_0, Female = gender_1 and Unknown = gender_2.")]
+        public GenderModeEnum GenderMode { get; set; } = GenderModeEnum.Text;      
+        public enum GenderModeEnum{Text, Emoji}  
+
+        [Description("Select Gem, Square, SquareS or Wide on the first use, and delete from the serve before changing to another selection in the HUB setting. Custom Tera's emojis upload to serve must be saved under filename format: 'type_icon_00..01..02.\r\n")]
+        public TeraTypeModeEnum TeraTypeMode { get; set; } = TeraTypeModeEnum.Text;      
+        public enum TeraTypeModeEnum{Text, Gem, Square, SquareS, Wide}  
         
-        [Description("Set EmojiCode")]
-        public List<MoveEmojiConfig> MoveEmojiConfigs { get; set; } = new();
+        [Description("MoveType's option must match TeraType; ie Gem = Gem")]
+        public TeraTypeModeEnum MoveTypeMode { get; set; } = TeraTypeModeEnum.Text;      
 
-        public EmbedSettingConfig()
-        {
-            MoveEmojiConfigs = [
-                new MoveEmojiConfig("Normal",0),
-                new MoveEmojiConfig("Fighting",1),
-                new MoveEmojiConfig("Flying",2),
-                new MoveEmojiConfig("Poison",3),
-                new MoveEmojiConfig("Ground",4),
-                new MoveEmojiConfig("Rock",5),
-                new MoveEmojiConfig("Bug",6),
-                new MoveEmojiConfig("Ghost",7),
-                new MoveEmojiConfig("Steel",8),
-                new MoveEmojiConfig("Fire",9),
-                new MoveEmojiConfig("Water",10),
-                new MoveEmojiConfig("Grass",11),
-                new MoveEmojiConfig("Electric",12),
-                new MoveEmojiConfig("Psychic",13),
-                new MoveEmojiConfig("Ice",14),
-                new MoveEmojiConfig("Dragon",15),
-                new MoveEmojiConfig("Dark",16),
-                new MoveEmojiConfig("Fairy",17),
-                new MoveEmojiConfig("Stellar",99),
-            ];
-        }
+        [Description("Select BigItems or ArtworkItems for held item sprites from PKHeX's database or Text for text form.\r\n")]
+        public ItemEmojiTypeEnum ItemEmojiMode { get; set; } = ItemEmojiTypeEnum.Text;
 
-        // Build TeraTypeEmoji
-        [Description("Use TeraTypeEmoji")]
-        public bool TeraTypeEmoji { get; set; } = false;        
+        public enum ItemEmojiTypeEnum{Text, ArtworkItems, BigItems}
+        
+        [Description("Select Emoji for Pokémon's Mark/s sprites in the embed or Text in text form.")]
+        public MarkEmojiModeEnum MarkEmojiMode { get; set; } = MarkEmojiModeEnum.Text;
 
-        // Build GenderEmoji
-        [Description("Use GenderEmoji")]
-        public bool GenderEmoji { get; set; } = false;        
-        [Description("Set GenderEmoji")]
-        public List<GenderEmojiConfig> GenderEmojiConfig { get; set; } = [
-                new GenderEmojiConfig("Male"),
-                new GenderEmojiConfig("Female"),
-                new GenderEmojiConfig("NoGender"),
-            ];
+        public enum MarkEmojiModeEnum{Text, Emoji}
+        
         
         // public IEnumerator<MoveEmojiConfig> GetEnumerator() => MoveEmojiConfigs.GetEnumerator();
         // public IEnumerable<string> Summarize() => MoveEmojiConfigs.Select(z => z.ToString());

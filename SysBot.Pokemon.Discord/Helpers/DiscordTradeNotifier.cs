@@ -2,6 +2,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using PKHeX.Core;
+using SysBot.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ public class DiscordTradeNotifier<T>(T Data, PokeTradeTrainerInfo Info, int Code
         return msg;
     }
 
-    public void TradeEmbed(PKM pkm, PokeTradeDetail<T> info)
+    public async Task TradeEmbed(PKM pkm, PokeTradeDetail<T> info)
     {
         // Obtain current position
         var position = QueueInfo.CheckPosition(Trader.Id, PokeRoutineType.LinkTrade);
@@ -48,23 +49,30 @@ public class DiscordTradeNotifier<T>(T Data, PokeTradeTrainerInfo Info, int Code
         var etaMessage = $"Estimated:{adjustedEta:F1} min(s) ";
 
         // Build embed
+        // Modify into a state of waiting for asynchronous execution, add code await ConfigureAwait(false);
+        // Implement await to ensure the asynchronous code in the embed had been executed before proceeding to avoid error and incomplete data
+        // TemplateTrade contains methods for uploading emoji to Discord, and these contents are asynchronous.
         var template = new TemplateTrade<T>(pkm, Context, Hub);
-        EmbedBuilder embed = template.Generate(positionNum, etaMessage);
-
+        EmbedBuilder embed = await template.Generate(positionNum, etaMessage).ConfigureAwait(false);
         // Obtain display info
         string msg = TradeDisplayingInfo(info);
 
         Context.Channel.SendMessageAsync(Trader.Username + " - " + msg, embed: embed.Build()).ConfigureAwait(false);
+
+        // Implement a 2 second delay to cache deletion
+        await Task.Delay(2_000);
+        // Delete emoji from cache
+        await template.pkmString.ClearCache();
     }
 
-    public void TradeInitialize(PokeRoutineExecutor<T> routine, PokeTradeDetail<T> info)
+    public async void TradeInitialize(PokeRoutineExecutor<T> routine, PokeTradeDetail<T> info)
     {
         // Obtain PKM
         PKM pkm = info.TradeData;
         
         // Sent Embed card
         if (info.Type is PokeTradeType.Specific)
-            TradeEmbed(pkm, info);
+            await TradeEmbed(pkm, info);
         
         // Text message sent
         var receive = Data.Species == 0 ? string.Empty : $" ({Data.Nickname})";

@@ -9,6 +9,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+    <PackageReference Include="JsonConverter.Abstractions" Version="0.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="NLog" Version="5.2.8" />
     <PackageReference Include="LibUsbDotNet" Version="2.2.29" />
   </ItemGroup>
