@@ -7,6 +7,8 @@ This fork is intended for my personal use. You're free to use this fork, but ple
 ## Usages
 Setting up can be found here https://pastebin.com/SMH8J5zj
 
+[Screenshot-20241025-183106-Samsung-Internet.jpg](https://postimg.cc/MX0Y177z)
+
 ## Support Discords:
 
 For specific support for this fork of [kwsch](https://github.com/kwsch)'s [SysBot.NET](https://github.com/kwsch/SysBot.NET) repo feel free to join! (No support will be provided in the official PKHeX or PA Discord, please don't bother the devs)
