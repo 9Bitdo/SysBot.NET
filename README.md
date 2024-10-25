@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/badge/License-AGPLv3-blue.svg)
 
 ## Disclaimer
-This fork is intended for my personal use. You're free to use this fork, but please dont abuse it or ask me for customization for your own gain. If you have the knowledge to make it better do link me up !
+This fork is intended for my personal use. You're free to use this fork, but please dont abuse it or ask me for customization to your own gain. If you have the knowledge to make it better do link me up !
 
 ## Usages
 Setting up can be found here https://pastebin.com/SMH8J5zj
