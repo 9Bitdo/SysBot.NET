@@ -7,7 +7,7 @@ This fork is intended for my personal use. You're free to use this fork, but ple
 ## Usages
 Setting up can be found here https://pastebin.com/SMH8J5zj
 
-![alt text]https://postimg.cc/MX0Y177z
+![Screenshot-20241025-183106-Samsung-Internet.jpg](https://postimg.cc/MX0Y177z)
 
 ## Support Discords:
 
