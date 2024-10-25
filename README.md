@@ -5,9 +5,9 @@
 This fork is intended for my personal use. You're free to use this fork, but please dont abuse it or ask me for customization to your own gain. If you have the knowledge to make it better do link me up !
 
 ## Usages
-Setting up can be found here https://pastebin.com/SMH8J5zj
+[![Screenshot-20241025-185029-Samsung-Internet.jpg](https://i.postimg.cc/zXkTNSkF/Screenshot-20241025-185029-Samsung-Internet.jpg)](https://postimg.cc/TppKqbFK)
 
-[![Screenshot-20241025-183106-Samsung-Internet.jpg](https://i.postimg.cc/sfq0dK1G/Screenshot-20241025-183106-Samsung-Internet.jpg)](https://postimg.cc/MX0Y177z)
+Setup instruction can be found here https://pastebin.com/SMH8J5zj
 
 ## Support Discords:
 
