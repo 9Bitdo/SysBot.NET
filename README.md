@@ -2,12 +2,16 @@
 ![License](https://img.shields.io/badge/License-AGPLv3-blue.svg)
 
 ## Disclaimer
-This fork is intended for my personal use. You're free to use this fork, but please be aware I'm not willing to add specific features that don't fit my needs.
+This fork is intended for my personal use. You're free to use this fork, but please dont abuse it or ask me for customization for your own gain. If you have the knowledge to make it better do link me up !
+
+## Usages
+Setting up can be found here https://pastebin.com/SMH8J5zj
 
 ## Support Discords:
 
 For specific support for this fork of [kwsch](https://github.com/kwsch)'s [SysBot.NET](https://github.com/kwsch/SysBot.NET) repo feel free to join! (No support will be provided in the official PKHeX or PA Discord, please don't bother the devs)
 
+Huge thanks to Manu being patient, supportive and the amount of guidance willing to share (this matters alot to me)
 [Support Server: Manu's Server](https://discord.com/invite/yWveAjKbKt)
 
 [<img src="https://canary.discordapp.com/api/guilds/693083823197519873/widget.png?style=banner2">](https://discord.gg/yWveAjKbKt)
@@ -62,6 +66,8 @@ Pokémon API logic is provided by [PKHeX](https://github.com/kwsch/PKHeX/), and 
 ## Special Credits:
 This SysBot fork is an agglomeration of different forks and other PKHeX/SysBot based programs.
 Thanks to [Santacrab](https://github.com/santacrab2), [Zyro](https://github.com/zyro670), [Koi](https://github.com/Koi-3088), [Berichan](https://github.com/berichan), [Anubis](https://github.com/Lusamine), [Archit](https://github.com/architdate), [Kurt](https://github.com/kwsch) and all the developers that contributed and will contribute to their repositories!
+
+Thanks to DavidWong for further developing the fork ！ 
 
 # License
 Refer to the `License.md` for details regarding licensing.
