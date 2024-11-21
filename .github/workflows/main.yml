@@ -25,10 +25,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name: Install .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
 
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
@@ -51,10 +51,10 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: SysBot.Pokemon.WinForms
-        path: SysBot.Pokemon.WinForms\bin\Release\net8.0-windows
+        path: SysBot.Pokemon.WinForms\bin\Release\net9.0-windows
 
     - name: Upload ConsoleApp artifacts
       uses: actions/upload-artifact@v4
       with:
         name: SysBot.Pokemon.ConsoleApp
-        path: SysBot.Pokemon.ConsoleApp\bin\Release\net8.0
+        path: SysBot.Pokemon.ConsoleApp\bin\Release\net9.0
