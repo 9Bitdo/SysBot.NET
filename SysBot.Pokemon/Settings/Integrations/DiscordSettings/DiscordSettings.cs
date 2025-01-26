@@ -18,10 +18,10 @@ public partial class DiscordSettings
 
     // Startup
 
-    [Category(Startup), Description("Your Discord account Authorization.")]
+    [Category(Startup), Description("Authorization key generated from Chrome Developer Tools under Request Header.")]
     public string Authorization { get; set; } = string.Empty;
 
-    [Category(Startup), Description("Bot login token.")]
+    [Category(Startup), Description("Bot login token generated from Discord Developer Portal.")]
     public string Token { get; set; } = string.Empty;
 
     [Category(Startup), Description("Bot command prefix.")]
@@ -85,10 +85,10 @@ public partial class DiscordSettings
     [Category(Users), Description("Disabling this will remove global sudo support.")]
     public bool AllowGlobalSudo { get; set; } = true;
     
-    [Category(Channels), Description("Channel ID that will use and upload emoji")]
+    [Category(Channels), Description("Channel ID for utilising and uploading emojis")]
     public string EmojiChannel { get; set; } = "";
 
-    [Category(Channels), Description("Channel IDs that will echo the log bot data.")]
+    [Category(Channels), Description("Channel IDs use for echoing log data from the bot.")]
     public RemoteControlAccessList LoggingChannels { get; set; } = new();
 
     [Category(Channels), Description("Logger channels that will log trade start messages.")]
